@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Main Content -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Recent News Disaster Info Section -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardRecentDisaster"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Title for the Disaster Info Section -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recent Disaster News in India"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <!-- Recent News Paragraph -->
+                        <TextView
+                            android:id="@+id/disasterInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="India has recently faced multiple natural disasters: devastating floods in Assam since June 2024 due to heavy rainfall and overflowing rivers; a 4.0 magnitude earthquake in Delhi-NCR on February 17, 2025; and severe dust storms and heavy rain in Delhi on May 2, 2025, which caused fatalities and major disruptions."
+                            android:textSize="14sp"
+                            android:layout_marginTop="8dp"
+                            android:lineSpacingExtra="4dp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Image Animated Slider (Optional, if required) -->
+                <ImageView
+                    android:id="@+id/disasterImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/disaster"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toBottomOf="@id/cardRecentDisaster"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <!-- Emergency Steps Button -->
+                <Button
+                    android:id="@+id/disasterReporting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Report Disaster"
+                    android:layout_marginTop="50dp"
+                    android:layout_centerHorizontal="true"
+                    app:layout_constraintTop_toBottomOf="@id/disasterImageView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:onClick="onEmergencyStepsClick"/>
+
+                <Button
+                    android:id="@+id/btnEmergencySOS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergency SOS"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/disasterReporting"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Side Menu -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@color/colorPrimary"
+        app:itemTextColor="@android:color/black"
+        app:subheaderColor="@color/colorPrimaryDark"
+        app:itemIconPadding="16dp" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

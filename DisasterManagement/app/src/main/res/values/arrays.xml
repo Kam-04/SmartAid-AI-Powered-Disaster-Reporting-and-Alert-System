@@ -1,0 +1,6 @@
+<resources>
+    <string-array name="disaster_types">
+        <item>Earthquake</item>
+        <item>Flood</item>
+    </string-array>
+</resources>

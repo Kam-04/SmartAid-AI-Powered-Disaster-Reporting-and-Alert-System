@@ -1,0 +1,51 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_nav_header_image"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_rescue_instructions"
+        android:icon="@drawable/ic_help"
+        android:title="Rescue Instructions" />
+
+    <item
+        android:id="@+id/nav_reporting"
+        android:icon="@drawable/ic_reporting"
+        android:title="Disaster Reporting" />
+
+    <item
+        android:id="@+id/nav_maps"
+        android:icon="@drawable/ic_baseline_place_24"
+        android:title="Maps" />
+
+    <item
+        android:id="@+id/nav_sos"
+        android:icon="@drawable/ic_emergency"
+        android:title="Emergency SOS" />
+
+    <item
+        android:id="@+id/nav_monitoring"
+        android:icon="@drawable/ic_monitoring"
+        android:title="Monitoring Dashboard" />
+
+    <group
+        android:id="@+id/nav_group_analysis"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_analysis"
+            android:icon="@drawable/ic_analysis"
+            android:title="Disaster Analysis">
+            <menu>
+                <item
+                    android:id="@+id/nav_earthquake_analysis"
+                    android:icon="@drawable/earthquake"
+                    android:title="Earthquake Analysis" />
+                <item
+                    android:id="@+id/nav_flood_analysis"
+                    android:icon="@drawable/flood"
+                    android:title="Flood Analysis" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

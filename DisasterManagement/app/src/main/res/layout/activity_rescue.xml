@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.RescueInstructions">
+
+    <!-- Use standard ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Rescue Instructions Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvRescueInstructions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Earthquake Emergency Steps"
+                        android:textAppearance="?android:textAppearanceLarge"
+                        android:textColor="#000"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+                            android:id="@+id/step1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1. Stay calm! If you're indoors, stay inside. If you're outside, stay outside."
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/step2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2. If you're indoors, stand against a wall near the center of the building, stand in a doorway, or crawl under heavy furniture (a desk or table). Stay away from windows and outside doors."
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/step3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3. If you're outdoors, stay in the open away from power lines or anything that might fall. Stay away from buildings (stuff might fall off the building or the building could fall on you)."
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/step4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4. Don't use matches, candles, or any flame. Broken gas lines and fire don't mix."
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/step5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5. If you're in a car, stop the car and stay inside the car until the earthquake stops."
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/step6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6. Don't use elevators (they'll probably get stuck anyway)."
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/step7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7. Call government emergency numbers like ambulance, fire brigade, etc."
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/step8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8. Call and inform dear ones who may be near you."
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/step9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9. Issue alert on the app."
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Emergency Contacts Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvEmergencyContacts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Emergency Contacts"
+                        android:textAppearance="?android:textAppearanceLarge"
+                        android:textColor="#000"
+                        android:textStyle="bold" />
+
+                    <!-- Icons for Emergency Contacts -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:weightSum="4">
+
+
+                        <ImageView
+                            android:id="@+id/ambulanceIcon"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_ambulance"
+                            android:contentDescription="Ambulance"
+                            android:onClick="makePhoneCall" />
+
+                        <ImageView
+                            android:id="@+id/policeIcon"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_police"
+                            android:contentDescription="Police"
+                            android:onClick="makePhoneCall" />
+
+                        <ImageView
+                            android:id="@+id/fireIcon"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_fire"
+                            android:contentDescription="Fire Department"
+                            android:onClick="makePhoneCall" />
+
+                        <ImageView
+                            android:id="@+id/disasterMgmtIcon"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_help"
+                            android:contentDescription="Disaster Management"
+                            android:onClick="makePhoneCall" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/nav_header_image"
+        android:layout_width="236dp"
+        android:layout_height="179dp"
+        android:contentDescription="HydroSeis Logo"
+        android:src="@drawable/hydroseis" />
+
+</LinearLayout>

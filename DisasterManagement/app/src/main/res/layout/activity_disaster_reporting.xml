@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.DisasterReporting">
+
+    <LinearLayout
+        android:id="@+id/disaster_reporting_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- App bar / toolbar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+           <!-- <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:title="Disaster Observation"
+                app:titleTextColor="@android:color/white" />-->
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- Scrollable form content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Screen header -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Report Disaster Observations"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Please provide details about the disaster you are observing and upload any relevant media." />
+
+                <!-- Disaster Name: multi-select dropdown -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Disaster Name"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:labelFor="@id/multiDisasterName" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/multiDisasterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select one or more"
+                    android:completionThreshold="1"
+                    android:dropDownHeight="wrap_content"
+                    android:dropDownVerticalOffset="8dp"
+                    android:background="@android:drawable/edit_text"
+                    android:padding="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:imeOptions="flagNoExtractUi" />
+
+                <!-- Location / Place (Current Location) -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Location / Place"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:labelFor="@id/textCurrentLocation" />
+
+                <TextView
+                    android:id="@+id/textCurrentLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fetching current location..."
+                    android:background="@android:drawable/edit_text"
+                    android:padding="8dp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Description -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description of Affected Area"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:labelFor="@id/editDescription" />
+
+                <EditText
+                    android:id="@+id/editDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Detailed description of what you see"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Affected Area -->
+                <!--<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Affected Area"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:labelFor="@id/editAffectedArea" />
+
+                <EditText
+                    android:id="@+id/editAffectedArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g. Flooded streets, collapsed buildings"
+                    android:layout_marginBottom="16dp" />-->
+
+                <!-- Additional Observations -->
+               <!-- <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Additional Observations"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:labelFor="@id/editObservations" />
+
+                <EditText
+                    android:id="@+id/editObservations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Other important details"
+                    android:inputType="textMultiLine"
+                    android:minLines="2"
+                    android:layout_marginBottom="16dp" />-->
+
+                <!-- Media Upload Options -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Photo or Video"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <Button
+                        android:id="@+id/btnUploadPhoto"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Upload Photo"
+                        android:contentDescription="Upload a photo of the disaster" />
+
+                    <Button
+                        android:id="@+id/btnUploadVideo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Upload Video"
+                        android:contentDescription="Upload a video of the disaster" />
+                </LinearLayout>
+
+                <!-- Submit Report Button -->
+                <Button
+                    android:id="@+id/btnSubmitReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit Report"
+                    android:layout_marginTop="24dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Progress Overlay -->
+    <FrameLayout
+        android:id="@+id/progress_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="48dp"
+            android:text="Submitting report..."
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </FrameLayout>
+</FrameLayout>
